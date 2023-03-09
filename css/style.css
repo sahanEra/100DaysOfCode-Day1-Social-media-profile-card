@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root{
+    --light-blue:#1c9eff;
+    --dark-blue:#007ad6;
+    --btn-yellow:#ffd01a;
+    --btn-hover-yellow:#efb10a;
+    --btn-active-yellow:#e8a200;
+    --light-gray:#f2f2f2;
+    --gray:#a0a0a0;
+    --pink:#ff9eaa;
+}
+
+body{
+    background: linear-gradient(to bottom right, #fff,var(--pink));
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.card{
+    background-color: #fff;
+    max-width: 360px;
+    overflow: hidden;
+    border-radius: 2rem;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
+
+.card .banner{
+    background: url('/img/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.card .banner .imgBox{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    transform: translateY(50%);
+    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transition: transform 0.2s cubic-bezier(0.175,0.885,0.32,1.275);
+}
+
+.card .banner .imgBox img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .banner .imgBox:hover{
+    transform: translateY(50%) scale(1.2);
+}
+
+.card .card-body{
+    position: relative;
+    padding: 100px 30px 40px;
+}
+
+.card .card-body .menu{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background-color 100ms ease-in-out;
+}
+
+.card .card-body .menu{
+    cursor: pointer;
+    background-color: var(--light-gray);
+}
+
+.card .name{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.card .title{
+    text-align: center;
+    color: var(--gray);
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.card .actions{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.card .actions .follow-info{
+    padding-bottom: 20px;
+    display: flex;
+}
+
+.card .actions .follow-info h2{
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    transition: background-color 200ms ease-in-out;
+}
+
+.card .actions .follow-info h2 span{
+    color: var(--light-blue);
+    font-weight: bold;
+}
+
+.card .actions .follow-info h2 small{
+    color: var(--gray);
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.card .actions .follow-info h2:hover{
+    background-color: var(--light-gray);
+    cursor: pointer;
+}
+
+.card .actions .follow-info h2 span:hover{
+    color: var(--dark-blue);
+}
+
+.card .actions button{
+    background-color: var(--btn-yellow);
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 200ms ease-in-out, transform 200ms cubic-bezier(0.175,0.885,0.32,1.275);;
+}
+
+.card .actions button:hover{
+    background-color: var(--btn-hover-yellow);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.card .actions button:active{
+    background-color: var(--btn-active-yellow);
+    transform: scale(1);
+}
+
+.card .desc{
+    text-align: center;
+    color: var(--gray);
+}
